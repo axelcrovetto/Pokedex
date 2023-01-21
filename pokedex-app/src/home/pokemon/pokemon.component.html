@@ -1,0 +1,33 @@
+<p>
+  pokemon works!
+</p>
+
+<div class="container">
+  <ul class="list-group">Moves:
+    <div *ngFor="let move of pokemonObject.moves">
+      <li class="list-group-item">{{move.move.name}}</li>
+    </div>
+  </ul>
+</div>
+
+<div class="container">
+  <ul class="list-group">Types:
+    <div *ngFor="let type of pokemonObject.types">
+        <li class="list-group-item">{{type.type.name}}</li>
+    </div>
+  </ul>
+</div>
+
+
+<div class="card" style="width: 20rem;">
+  <img src="{{pokemonObject.sprites.front_default}}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{pokemonObject.name}}</h5>
+    <p class="card-text">
+      Id: {{pokemonObject.id}}
+      Weigth: {{pokemonObject.weight}}
+      Height: {{pokemonObject.height}}
+    </p>
+    <a href="#" class="btn btn-primary">View Moves</a>
+  </div>
+</div>
