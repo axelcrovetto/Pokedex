@@ -13,7 +13,7 @@ export class PokemonComponent implements OnInit {
   pokemonObject:any
   constructor(private pokemonService:PokemonService) { }
   ngOnInit() {
-    this.pokemonService.getPokemonData(2).subscribe(
+    this.pokemonService.getPokemonData(6).subscribe(
       (res) => {
           this.pokemonObject = res
           /* res['image'] = res.image
@@ -27,10 +27,11 @@ export class PokemonComponent implements OnInit {
 
     )
   }
-  fetchPokemon(numPokemon:number):Pokemon{
-
-
-    return this.pokemon;
+  toUpperCase(word:string){
+    return this.pokemonService.toUpperCase(word)
+  }
+  generateIcon(type:string){
+    return this.pokemonService.generateIcon(type)
   }
 
 }
