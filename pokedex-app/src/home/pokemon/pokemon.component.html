@@ -1,31 +1,28 @@
-<p>
-  pokemon works!
-</p>
-
-<!-- <div class="container">
-  <ul class="list-group">Moves:
-    <div *ngFor="let move of pokemonObject.moves">
-      <li class="list-group-item">{{move.move.name}}</li>
+<div class="container" *ngIf="pokemonApiContent |async as poke">
+  <div class="card" style="width: 20rem;">
+    <img src="{{generateImage(poke.name)}}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <div class="row">
+        <h5 class="card-title col">{{toUpperCase(poke.name)}}</h5>
+        <div *ngFor="let type of poke.types">
+          <p class="{{generateIcon(type.type.name)}}">{{type.type.name}}</p>
+        </div></div>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Id: {{poke.id}}</li>
+        <li class="list-group-item">Weigth: {{poke.weight}}</li>
+        <li class="list-group-item">Height: {{poke.height}}</li>
+      </ul>
+      <div class="card-body">
+        <a href="#" class="card-link">Moves</a>
+        <a href="#" class="card-link">Another link</a>
+      </div>
     </div>
-  </ul>
-</div> -->
-
-<div class="card" style="width: 18rem;">
-  <img src="{{pokemonObject.sprites.front_default}}" class="card-img-top" alt="...">
-  <div class="card-body">
-    <div class="row">
-    <h5 class="card-title col">{{toUpperCase(pokemonObject.name)}}</h5>
-    <div *ngFor="let type of pokemonObject.types">
-      <p class="{{generateIcon(type.type.name)}}">{{type.type.name}}</p>
-    </div></div>
-  </div>
-  <ul class="list-group list-group-flush">
-    <li class="list-group-item">Id: {{pokemonObject.id}}</li>
-    <li class="list-group-item">Weigth: {{pokemonObject.weight}}</li>
-    <li class="list-group-item">Height: {{pokemonObject.height}}</li>
-  </ul>
-  <div class="card-body">
-    <a href="#" class="card-link">Moves</a>
-    <a href="#" class="card-link">Another link</a>
-  </div>
+    <!-- <div class="container">
+      <ul class="list-group">Moves:
+        <div *ngFor="let move of poke.moves">
+          <li class="list-group-item">{{move.move.name}}</li>
+        </div>
+      </ul>
+    </div> -->
 </div>

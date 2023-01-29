@@ -19,4 +19,16 @@ export class PokemonService {
   generateIcon(word:string){
     return "col-10 type-icon type-"+word;
   }
+  generateImage(name:string){
+    return `https://img.pokemondb.net/artwork/large/${name}.jpg`
+  }
+
+  //TO-DO find a why to obtain all pokemon without for cicle
+  fetchKantoPokemon(){
+    fetch('https://pokeapi.co/api/v2/pokemon?limit=1008')
+    .then(response => response.json())
+    .then(allpokemon => console.log(allpokemon))
+  }
+
+
 }

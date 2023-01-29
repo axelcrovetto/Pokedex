@@ -1,6 +1,6 @@
 import { PokemonService } from './../../services/pokemon.service';
-import { Pokemon } from './../../classes/Pokemon';
 import { Component, Input, OnInit } from '@angular/core';
+import { map, Observable } from 'rxjs';
 
 @Component({
   selector: 'pokemon-component',
@@ -9,23 +9,13 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class PokemonComponent implements OnInit {
   @Input() numPokemon!: number;
-  pokemon: Pokemon = new Pokemon;
   pokemonObject:any
+  pokemonApiContent:Observable<any> | undefined
+
   constructor(private pokemonService:PokemonService) { }
   ngOnInit() {
-    this.pokemonService.getPokemonData(6).subscribe(
-      (res) => {
-          this.pokemonObject = res
-          /* res['image'] = res.image
-          res['type'] = res.type
-          res['id'] = res.id
-          res['weigth'] = res.weigth
-          res['heigth'] = res.heigth
-          res['baseExperience'] = res.baseExperience */
-
-        }
-
-    )
+    this.pokemonApiContent = this.pokemonService.getPokemonData(9).pipe(
+      map((res) =>res))
   }
   toUpperCase(word:string){
     return this.pokemonService.toUpperCase(word)
@@ -33,5 +23,15 @@ export class PokemonComponent implements OnInit {
   generateIcon(type:string){
     return this.pokemonService.generateIcon(type)
   }
-
+  generateImage(name:string):string{
+    return this.pokemonService.generateImage(name)
+  }
+  findPokemon(id:number){
+    this.pokemonService.getPokemonData(id).subscribe(
+      (res) => {
+          this.pokemonObject = res
+          console.log(this.pokemonObject)
+        }
+    )
+  }
 }
