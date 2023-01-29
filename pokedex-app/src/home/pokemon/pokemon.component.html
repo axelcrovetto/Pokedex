@@ -25,8 +25,8 @@
     </div>
       <ul class="list-group list-group-flush">
         <li class="list-group-item">Id: {{poke.id}}</li>
-        <li class="list-group-item">Weigth: {{poke.weight}}</li>
-        <li class="list-group-item">Height: {{poke.height}}</li>
+        <li class="list-group-item">Weigth: {{poke.weight/10}} kg</li>
+        <li class="list-group-item">Height: {{poke.height/10}} m</li>
       </ul>
       <div class="card-body">
         <button class="card-link" (click)="openPopup()">View Forms</button>
