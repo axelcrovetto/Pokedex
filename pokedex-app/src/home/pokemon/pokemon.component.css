@@ -333,3 +333,82 @@ th {
 td:first-of-type {
   width: 130px;
 }
+
+section{
+  display: flex;
+  width: 750px;
+  height: 550px;
+}
+section img {
+  width: 0px;
+  flex-grow:1;
+  object-fit:cover;
+  opacity: .8;
+  transition: .5s ease;
+  animation: pokemon 5s infinite;
+}
+section img:hover {
+  cursor:move;
+  width:300px;
+  opacity: 1;
+  filter:contrast(120%);
+}
+@keyframes pokemon {
+ 0%{
+  transform: translateY(-20px);
+ }
+ 30%{
+  transform: translateY(0px) rotate(4deg);
+ }
+ 50%{
+  transform: rotate(-4deg);
+ }
+ 75%{
+  transform: rotate(4deg);
+ }
+ 100%{
+  transform: translateY(-20px);
+ }
+}
+
+.popup{
+  width: 800px;
+  background: #fff;
+  border-radius: 6px;
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  transform: translate(-50%,-800%)scale(0.1);
+  text-align:center;
+  padding:0 30px 30px;
+  color: #333;
+  visibility: hidden;
+  transition: transform 0.4s, top 0.4s;
+}
+.open-popup{
+  visibility: visible;
+  top: 40%;
+  transform: translate(-10%,-800%) scale(1);
+}
+.popup img {
+  margin-top: -auto;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+.popup h2{
+  font-size: 38px;
+  font-weight: 500;
+  margin: 30px 0 10px;
+}
+.popup button {
+  width: 100px;
+  margin-top: 50px;
+  padding: 10px 0;
+  background-color: #6fd649;
+  color: #fff;
+  border:0;
+  outline: none;
+  font-size: 18px;
+  border-radius: 4px;
+  cursor:pointer;
+  box-shadow: 0 5px 5px  rgba(0, 0, 0, 0.2);
+}

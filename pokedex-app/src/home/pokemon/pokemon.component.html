@@ -1,28 +1,49 @@
+<div class="container">
+  <input
+  id="idPokemon"
+  name="idPokemon"
+  [(ngModel)]="idPokemon"
+
+  required
+  placeholder="Insert Pokemon number"
+  type="number"
+ />
+ <button (click)="getPokemonInfo(idPokemon)">Search</button>
+</div>
+
+<br>
 <div class="container" *ngIf="pokemonApiContent |async as poke">
   <div class="card" style="width: 20rem;">
-    <img src="{{generateImage(poke.name)}}" class="card-img-top" alt="...">
+    <img src="{{generateImageJPG(poke.name)}}" class="card-img-top" alt="{{poke.name}}">
     <div class="card-body">
       <div class="row">
         <h5 class="card-title col">{{toUpperCase(poke.name)}}</h5>
-        <div *ngFor="let type of poke.types">
-          <p class="{{generateIcon(type.type.name)}}">{{type.type.name}}</p>
-        </div></div>
+          <div *ngFor="let type of poke.types">
+            <p class="{{generateIcon(type.type.name)}}">{{type.type.name}}</p>
+          </div>
       </div>
+    </div>
       <ul class="list-group list-group-flush">
         <li class="list-group-item">Id: {{poke.id}}</li>
         <li class="list-group-item">Weigth: {{poke.weight}}</li>
         <li class="list-group-item">Height: {{poke.height}}</li>
       </ul>
       <div class="card-body">
-        <a href="#" class="card-link">Moves</a>
-        <a href="#" class="card-link">Another link</a>
-      </div>
-    </div>
-    <!-- <div class="container">
-      <ul class="list-group">Moves:
-        <div *ngFor="let move of poke.moves">
-          <li class="list-group-item">{{move.move.name}}</li>
-        </div>
-      </ul>
-    </div> -->
+        <button class="card-link" (click)="openPopup()">View Forms</button>
+        <a href="#" class="card-link"  (click)="closePopup()">Close</a>
+       </div>
+  </div>
+  <!-- POPUP -->
+  <div class="popup" id="popup">
+    <dialog>
+        <section>
+        <img src="{{generateImagePNG(poke.name)}}" class="card-img-top" alt="{{poke.name}}">
+        <img src="{{generate3dGIFShiny(poke.name)}}" class="card-img-top" alt="{{poke.name}}">
+        <img src="{{generate3dImagesShiny(poke.name)}}" class="card-img-top" alt="{{poke.name}}">
+        <img src="{{generate3dImagesMore(poke.name)}}"  class="card-img-top" alt="{{poke.name}}">
+        </section>
+    </dialog>
+
+  </div>
 </div>
+

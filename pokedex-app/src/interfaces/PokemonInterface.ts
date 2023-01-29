@@ -1,4 +1,4 @@
-export interface PokemonInterface {
+export interface PokemonInterface{
   name:string
   image:string
   //types: string
@@ -60,17 +60,17 @@ export interface PokemonInterface {
   }
   export interface Icons {
       front_default: string;
-      front_female?: any;
+      front_female?: string;
   }
   export interface Sprites {
       back_default: string;
-      back_female?: any;
+      back_female?: string;
       back_shiny: string;
-      back_shiny_female?: any;
+      back_shiny_female?: string;
       front_default: string;
-      front_female?: any;
+      front_female?: string;
       front_shiny: string;
-      front_shiny_female?: any;
+      front_shiny_female?: string;
   }
   export interface StatInside {
       name: string;
@@ -96,14 +96,12 @@ export interface PokemonInterface {
       forms: Form[];
       game_indices: GameIndice[];
       height: number;
-      held_items: any[];
       id: number;
       is_default: boolean;
       location_area_encounters: string;
       moves: Move[];
       name: string;
       order: number;
-      past_types: any[];
       species: Species;
       sprites: Sprites;
       stats: Stat[];
