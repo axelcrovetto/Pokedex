@@ -14,7 +14,7 @@
 <br>
 <div class="container" *ngIf="pokemonApiContent |async as poke">
   <div class="card" style="width: 20rem;">
-    <img src="{{generateImageJPG(poke.name)}}" class="card-img-top" alt="{{poke.name}}">
+    <img src="/assets/pokemonImages/{{poke.name}}.jpg" class="card-img-top" alt="{{poke.name}}">
     <div class="card-body">
       <div class="row">
         <h5 class="card-title col">{{toUpperCase(poke.name)}}</h5>
@@ -26,7 +26,7 @@
       <ul class="list-group list-group-flush">
         <li class="list-group-item">Id: {{poke.id}}</li>
         <li class="list-group-item">Weigth: {{poke.weight/10}} kg</li>
-        <li class="list-group-item">Height: {{poke.height/10}} m</li>
+        <li class="list-group-item">Heigth: {{poke.height/10}} m</li>
       </ul>
       <div class="card-body">
         <button class="card-link" (click)="openPopup()">View Forms</button>
