@@ -54,7 +54,7 @@ export class PokemonService {
   generate3dImagesMore(name:string){
     return `https://img.pokemondb.net/sprites/home/normal/2x/avif/${name}.avif`
   }
-  //TO-DO find a why to obtain all pokemon without for cicle
+  //TO-DO find a way to obtain all pokemon without for cicle
   fetchKantoPokemon(){
     fetch('https://pokeapi.co/api/v2/pokemon?limit=1008')
     .then(response => response.json())

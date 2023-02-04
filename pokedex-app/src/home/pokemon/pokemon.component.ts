@@ -64,9 +64,12 @@ export class PokemonComponent implements OnInit {
     popup?.classList.remove('open-popup')
   }
   getPokemonInfo(idPokemon:number){
-    if(idPokemon){
+    if(idPokemon && idPokemon > 0){
       this.pokemonApiContent = this.pokemonService.getPokemonData(this.idPokemon).pipe(
       map((res) =>res))
+    }
+    else if(idPokemon < 0){
+      alert("Insert a number greater than zero!")
     }
     else this.pokemonApiContent = undefined
   }

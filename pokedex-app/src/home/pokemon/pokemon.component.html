@@ -1,37 +1,42 @@
 <div class="container">
-  <input
-  id="idPokemon"
-  name="idPokemon"
-  [(ngModel)]="idPokemon"
 
-  required
-  placeholder="Insert Pokemon number"
+ <input
+  name="idPokemon"
   type="number"
- />
- <button (click)="getPokemonInfo(idPokemon)">Search</button>
+  class="input"
+  [(ngModel)]="idPokemon"
+  placeholder="Insert Pokemon number"
+  required
+  >
+ <button class="ml-3"(click)="getPokemonInfo(idPokemon)">Search</button>
 </div>
 
 <br>
 <div class="container" *ngIf="pokemonApiContent |async as poke">
-  <div class="card" style="width: 20rem;">
-    <img src="/assets/pokemonImages/{{poke.name}}.jpg" class="card-img-top" alt="{{poke.name}}">
-    <div class="card-body">
-      <div class="row">
-        <h5 class="card-title col">{{toUpperCase(poke.name)}}</h5>
-          <div *ngFor="let type of poke.types">
-            <p class="{{generateIcon(type.type.name)}}">{{type.type.name}}</p>
-          </div>
-      </div>
+  <div class="card-client" style="width: 20rem;">
+    <div class="user-picture" >
+      <img src="/assets/pokemonImages/{{poke.name}}.jpg" class="card-img-top" alt="{{poke.name}}">
     </div>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item">Id: {{poke.id}}</li>
-        <li class="list-group-item">Weigth: {{poke.weight/10}} kg</li>
-        <li class="list-group-item">Heigth: {{poke.height/10}} m</li>
-      </ul>
-      <div class="card-body">
-        <button class="card-link" (click)="openPopup()">View Forms</button>
-        <a href="#" class="card-link"  (click)="closePopup()">Close</a>
-       </div>
+    <div class="card-body">
+        <p class="name-pokemon">
+          {{toUpperCase(poke.name)}}
+          <span *ngFor="let type of poke.types">
+            <p class="{{generateIcon(type.type.name)}}">{{type.type.name}}</p>
+          </span>
+          <span>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">Id: {{poke.id}}</li>
+              <li class="list-group-item">Weight: {{poke.weight/10}} kg</li>
+              <li class="list-group-item">Height: {{poke.height/10}} m</li>
+            </ul>
+          </span>
+        </p>
+    </div>
+    <div class= "row">
+          <button class='col-4' (click)="openPopup()">View Forms</button>
+          <button class='col-4' (click)="closePopup()">Close</button>
+    </div>
+
   </div>
   <!-- POPUP -->
   <div class="popup" id="popup">

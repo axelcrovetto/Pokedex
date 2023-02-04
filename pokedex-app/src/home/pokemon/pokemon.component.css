@@ -1,3 +1,4 @@
+@import '../../styles.css';
 .gg-pokemon {
   box-sizing: border-box;
   position: relative;
@@ -25,9 +26,9 @@
   top: 3px
  }
 
+  /* Types */
 
- /* Types */
- html {
+html {
   font-family: 'Fira Sans', sans-serif;
   font-size: 15px;
   line-height: 1.5;
@@ -412,3 +413,105 @@ section img:hover {
   cursor:pointer;
   box-shadow: 0 5px 5px  rgba(0, 0, 0, 0.2);
 }
+
+
+/* card */
+.card-client {
+  background: #b52c2e;
+  width: 13rem;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border: 4px solid #da7c85;
+  box-shadow: 0 6px 10px rgba(207, 212, 222, 1);
+  border-radius: 10px;
+  text-align: center;
+  color: rgb(0, 0, 0);
+  font-family:'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  transition: all 0.3s ease;
+}
+
+.card-client:hover {
+  transform: translateY(-10px);
+}
+
+.user-picture {
+  overflow: hidden;
+  object-fit: cover;
+  width: 17rem;
+  height: 16rem;
+  background-color: white;
+  border: 4px solid #7cdacc;
+  border-radius: 999px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+.user-picture svg {
+  width: 2.5rem;
+  fill: currentColor;
+}
+
+.name-pokemon {
+  margin: 0;
+  margin-top: 15px;
+  font-weight: 600;
+  font-size: 30px;
+  align-items: center;
+}
+
+.name-pokemon span {
+  display: block;
+  font-weight: 200;
+  font-size: 16px;
+  margin-bottom:10px ;
+}
+
+button {
+  padding: 14px 25px;
+  border-radius: 10px;
+
+  border: 0;
+  background-color: rgb(255, 56, 86);
+  letter-spacing: 1.5px;
+  font-size: 15px;
+  transition: all .3s ease;
+  box-shadow: rgb(201, 46, 70) 0px 10px 0px 0px;
+  color: hsl(0, 0%, 100%);
+  margin-top: auto;
+  margin-left: auto;
+  margin-right: auto;
+ }
+
+ button:hover {
+  box-shadow: rgb(201, 46, 70) 0px 7px 0px 0px;
+ }
+
+ button:active {
+  background-color: rgb(255, 56, 86);
+  /*50, 168, 80*/
+  box-shadow: rgb(201, 46, 70) 0px 0px 0px 0px;
+  transform: translateY(5px);
+  transition: 200ms;
+ }
+
+ /* input */
+ .input {
+  border: 2px solid #e8e8e8;
+  padding: 15px;
+  border-radius: 10px;
+  background-color: #454545;
+  font-size: small;
+  font-weight: bold;
+  text-align: center;
+ }
+
+ .input:focus {
+  outline-color: white;
+  background-color: #474646;
+  color: #e8e8e8;
+  box-shadow: 5px 5px #a8a7a7;
+ }
