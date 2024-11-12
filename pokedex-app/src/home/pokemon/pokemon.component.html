@@ -1,5 +1,4 @@
 <div class="container">
-
  <input
   name="idPokemon"
   type="number"
@@ -28,6 +27,11 @@
               <li class="list-group-item">Id: {{poke.id}}</li>
               <li class="list-group-item">Weight: {{poke.weight/10}} kg</li>
               <li class="list-group-item">Height: {{poke.height/10}} m</li>
+              <li class="list-group-item">Abilities:
+                <div *ngFor="let item of poke.abilities; let i=index">
+                  {{i}}. {{toUpperCase(item.ability.name)}}
+                </div>
+              </li>
             </ul>
           </span>
         </p>

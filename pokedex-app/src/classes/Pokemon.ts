@@ -1,4 +1,4 @@
-import { PokemonInterface } from '../interfaces/PokemonInterface';
+import { Ability, PokemonInterface } from '../interfaces/PokemonInterface';
 export class Pokemon implements PokemonInterface{
   name:string
   image:string
@@ -7,6 +7,7 @@ export class Pokemon implements PokemonInterface{
   weigth:number
   heigth:number
   baseExperience:number
+  abilities: Ability[]
 
   constructor(){
     this.name =""
@@ -16,5 +17,6 @@ export class Pokemon implements PokemonInterface{
     this.weigth = 0
     this.heigth = 0
     this.baseExperience = 0
+    this.abilities=[]
   }
 }
