@@ -58,6 +58,10 @@ export class PokemonComponent implements OnInit {
     let popup = document.getElementById('popup')
     popup?.classList.add('open-popup')
   }
+  openMovesPopup(){
+    let popup = document.getElementById('moves')
+    popup?.classList.add('open-popup')
+  }
   closePopup(){
     let popup = document.getElementById('popup')
     popup?.classList.remove('open-popup')

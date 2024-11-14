@@ -31,6 +31,7 @@
                 <div *ngFor="let item of poke.abilities; let i=index">
                   {{i}}. {{toUpperCase(item.ability.name)}}
                 </div>
+                
               </li>
             </ul>
           </span>
@@ -39,6 +40,8 @@
     <div class= "row">
           <button class='col-4' (click)="openPopup()">View Forms</button>
           <button class='col-4' (click)="closePopup()">Close</button>
+          <button class='col-4' (click)="openMovesPopup()">Moves</button>
+          
     </div>
 
   </div>
@@ -52,6 +55,21 @@
         <img src="{{generate3dImagesMore(poke.name)}}"  class="card-img-top" alt="{{poke.name}}">
         </section>
     </dialog>
+  </div>
+    <div class="popup" id="moves">
+      <dialog>
+          <section>
+            <h3>Moves of {{ toUpperCase(poke.name) }}</h3>
+            <div>
+              <ol class="list-group list-group-numbered">
+                <li *ngFor="let item of poke.moves; let i = index" class="list-group-item">
+                  <strong>{{ i + 1 }}. </strong>{{ toUpperCase(item.move.name) }}
+                </li>
+              </ol>
+            </div>
+          
+          </section>
+      </dialog>
 
   </div>
 </div>

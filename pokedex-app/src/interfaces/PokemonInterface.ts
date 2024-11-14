@@ -7,6 +7,7 @@ export interface PokemonInterface{
   heigth:number
   baseExperience:number
   abilities: Ability[]
+  moves: Move[]
 }
   export interface Ability2 {
       name: string;
